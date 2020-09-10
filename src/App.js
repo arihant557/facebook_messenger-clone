@@ -9,8 +9,9 @@ const [messages , setMessages] = useState([]);
 console.log(input);
 console.log(messages);
 
-const sendMessage = event =>{
+const sendMessage = (event) =>{
 
+    event.preventDefault();
    setMessages([...messages, input]);
    setInput('');
 }
@@ -20,8 +21,12 @@ const sendMessage = event =>{
 
 <h1> Facebook messgenger clone </h1>
 
+<form>
+
 <input value = {input} onChange = {event => setInput(event.target.value)} />
-<button onClick = {sendMessage}>Send</button>
+<button type = 'submit'  onClick = {sendMessage}>Send</button>
+
+</form>
 {
   messages.map(message => (
     <p>{message}</p>
