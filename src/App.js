@@ -1,5 +1,5 @@
 import { ButtonGroup } from '@material-ui/core';
-import React, { useState } from 'react';
+import React, { useState , useEffect } from 'react';
 import { Button , FormControl , InputLabel ,  Input } from '@material-ui/core';
 import './App.css';
 import Message from './Message';
@@ -12,7 +12,13 @@ const [username , setUsername] = useState('');
 
 /*console.log(input);
 console.log(messages);
-*/
+*/ 
+useEffect(() => {
+
+  //const username = prompt("Please enter your name");
+  setUsername(prompt('Please enter your name'));
+
+}, [input])
 
 const sendMessage = (event) =>{
 
@@ -25,6 +31,7 @@ const sendMessage = (event) =>{
     <div className="App">
 
 <h1> Facebook messgenger clone </h1>
+<h2> Welcome {username} </h2>
 
 <form>
 <FormControl>
