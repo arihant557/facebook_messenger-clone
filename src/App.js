@@ -1,4 +1,6 @@
+import { ButtonGroup } from '@material-ui/core';
 import React, { useState } from 'react';
+import { Button } from '@material-ui/core';
 import './App.css';
 
 function App() {
@@ -16,7 +18,7 @@ const sendMessage = (event) =>{
    setInput('');
 }
 
-  return (
+  return ( 
     <div className="App">
 
 <h1> Facebook messgenger clone </h1>
@@ -24,7 +26,7 @@ const sendMessage = (event) =>{
 <form>
 
 <input value = {input} onChange = {event => setInput(event.target.value)} />
-<button type = 'submit'  onClick = {sendMessage}>Send</button>
+<Button variant ="contained" color ="primary"  type = 'submit'  onClick = {sendMessage}>Send</Button>
 
 </form>
 {
