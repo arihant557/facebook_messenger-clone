@@ -2,14 +2,17 @@ import { ButtonGroup } from '@material-ui/core';
 import React, { useState } from 'react';
 import { Button , FormControl , InputLabel ,  Input } from '@material-ui/core';
 import './App.css';
+import Message from './Message';
 
 function App() {
 
 const [input, setInput] = useState('');
 const [messages , setMessages] = useState([]);
+const [username , setUsername] = useState('');
 
-console.log(input);
+/*console.log(input);
 console.log(messages);
+*/
 
 const sendMessage = (event) =>{
 
@@ -25,14 +28,14 @@ const sendMessage = (event) =>{
 
 <form>
 <FormControl>
-  <InputLabel htmlFor="my-input">Enter a message</InputLabel>
+  <InputLabel>Enter a message</InputLabel>
   <Input  value = {input} onChange = {event => setInput(event.target.value)} />
   <Button  disabled={!input} variant ="contained" color ="primary"  type = 'submit'  onClick = {sendMessage}>Send</Button>
 </FormControl>
 </form>
 {
   messages.map(message => (
-    <p>{message}</p>
+    <Message text={message} />
   ))
 }
     
