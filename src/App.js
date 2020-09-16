@@ -13,16 +13,17 @@ const [username , setUsername] = useState('');
 /*console.log(input);
 console.log(messages);
 */ 
+
 useEffect(() => {
 
-  //const username = prompt("Please enter your name");
+  //const username = prompt("Please enter your name")
   setUsername(prompt('Please enter your name'));
 
 }, [input])
 
 const sendMessage = (event) =>{
 
-    event.preventDefault();
+   event.preventDefault();
    setMessages([...messages, input]);
    setInput('');
 }
@@ -34,11 +35,13 @@ const sendMessage = (event) =>{
 <h2> Welcome {username} </h2>
 
 <form>
+
 <FormControl>
   <InputLabel>Enter a message</InputLabel>
   <Input  value = {input} onChange = {event => setInput(event.target.value)} />
   <Button  disabled={!input} variant ="contained" color ="primary"  type = 'submit'  onClick = {sendMessage}>Send</Button>
 </FormControl>
+
 </form>
 {
   messages.map(message => (
