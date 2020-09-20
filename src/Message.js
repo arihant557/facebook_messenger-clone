@@ -4,20 +4,18 @@ import React from 'react';
 import { Card , CardContent , Typography} from '@material-ui/core';
 import './Message.css';
 
-export default function Message(props) {
+export default function Message(message,username) {
     return (
-
-            <Card className = "message">
+             <Card className = {'message'}>
                 <CardContent>
                 <Typography
                     color = "white"
                     variant = "h5"
                     component = "h2"
                     >
-                    {props.username}: {props.text}
+                    {message.username}: {message.text}
                  </Typography>
                 </CardContent>
-            </Card>
-            
+             </Card>       
     )
 }

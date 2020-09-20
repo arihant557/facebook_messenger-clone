@@ -5,13 +5,13 @@ import './App.css';
 import Message from './Message';
 
 function App() {
-
+ 
 const [input, setInput] = useState('');
 const [messages , setMessages] = useState([{username:'Facebook', text:'Welcome to messenger' }]);
 const [username , setUsername] = useState('');
 
 /*console.log(input);
-console.log(messages);
+console.log(messages); 
 */ 
 
 useEffect(() => {
@@ -45,7 +45,7 @@ const sendMessage = (event) =>{
 </form>
 {
   messages.map(message => (
-    <Message username={message.username} text={message.text} />
+    <Message username={username} message={message} />
   ))
 }
     
