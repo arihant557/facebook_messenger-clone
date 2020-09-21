@@ -4,7 +4,7 @@ import React from 'react';
 import { Card , CardContent , Typography} from '@material-ui/core';
 import './Message.css';
 
-export default function Message(message,username) {
+export default function Message({message,username}) {
     return (
              <Card className = {'message'}>
                 <CardContent>
