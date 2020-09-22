@@ -41,10 +41,10 @@ const sendMessage = (event) =>{
 
     message:  input,
     username: username,
-    timestamp: 
+    timestamp: firebase.firestore.FieldValue.serverTimestamp()
    })
 
-   setMessages([...messages, {username: username, text: input}]);
+  /* setMessages([...messages, {username: username, text: input}]);*/
    setInput('');
 }
 
