@@ -19,7 +19,9 @@ console.log(messages);
 useEffect(() => {
 
   //run once when the app component loads ;
-  db.collection('messages').onSnapshot(snapshot => {
+  db.collection('messages')
+  .orderBy('timestamp','desc')
+  .onSnapshot(snapshot => {
     setMessages(snapshot.docs.map(doc => doc.data()))
   });
 
