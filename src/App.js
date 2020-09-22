@@ -4,6 +4,7 @@ import { Button , FormControl , InputLabel ,  Input } from '@material-ui/core';
 import './App.css';
 import Message from './Message';
 import db from './firebase';
+import firebase from 'firebase';
 
 function App() {
  
@@ -35,6 +36,14 @@ useEffect(() => {
 const sendMessage = (event) =>{
 
    event.preventDefault();
+
+   db.collection('messages').add({
+
+    message:  input,
+    username: username,
+    timestamp: 
+   })
+
    setMessages([...messages, {username: username, text: input}]);
    setInput('');
 }
